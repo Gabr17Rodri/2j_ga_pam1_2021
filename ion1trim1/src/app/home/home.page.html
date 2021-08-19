@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      NUBANKO
+      CALCULADORA
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,24 +11,39 @@
   <div id="container">
     <ion-item>
       <ion-label position="floating">
-        Login
+        1º Número
       </ion-label>
-      <ion-input [(ngModel)]="login"></ion-input>
+      <ion-input type="number" [(ngModel)] = "num1"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">
-        Senha
+        2º Número
       </ion-label>
-      <ion-input type="password" [(ngModel)] = "senha"></ion-input>
+      <ion-input type="number" [(ngModel)] = "num2"></ion-input>
     </ion-item>
     <div>
-      {{ mensagem }}
+      <ion-input value="{{resposta}}" readonly></ion-input>
     </div>
 
     <div>
-      <ion-button color="primary" size="block" (click)="validar()">
-        ENTRAR
+      <ion-button color="warning" expand="block"  (click)="somar()">
+        Somar
+      </ion-button>
+    </div>
+    <div>
+      <ion-button color="danger" expand="block" (click)="subtrair()">
+        Subtrair
+      </ion-button>
+    </div>
+    <div>
+      <ion-button color="dark" expand="block" (click)="multiplicar()">
+        Multiplicar
+      </ion-button>
+    </div>
+    <div>
+      <ion-button color="success" expand="block" (click)="dividir()">
+        Dividir
       </ion-button>
     </div>
   </div>

@@ -1,3 +1,5 @@
+import { STRING_TYPE } from '@angular/compiler';
+import { convertActionBinding, convertPropertyBinding, convertPropertyBindingBuiltins } from '@angular/compiler/src/compiler_util/expression_converter';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,19 +8,17 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  login = '';
-  senha = '';
-  mensagem = '';
-
+  num1 = null;
+  num2 = null;
+  resposta = '';
 
   constructor() {}
 
-  validar(): void{
-    if(this.login === 'admin' && this.senha === '1234'){
-      this.mensagem = 'Usuário logado!';
-    }
-    else{
-      this.mensagem = 'Falha de autenticação';
-    }
+  somar(): void{
+    this.resposta = this.num1 + this.num2;
+  }
+
+  subtrair(): void{
+    this.resposta = (this.num1 - this.num2).toString();
   }
 }
