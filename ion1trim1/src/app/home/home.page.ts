@@ -1,5 +1,3 @@
-import { STRING_TYPE } from '@angular/compiler';
-import { convertActionBinding, convertPropertyBinding, convertPropertyBindingBuiltins } from '@angular/compiler/src/compiler_util/expression_converter';
 import { Component } from '@angular/core';
 
 @Component({
@@ -15,10 +13,26 @@ export class HomePage {
   constructor() {}
 
   somar(): void{
-    this.resposta = this.num1 + this.num2;
+    let r = this.num1 + this.num2;
+    this.resposta = r.toFixed(2).toString();
   }
 
   subtrair(): void{
-    this.resposta = (this.num1 - this.num2).toString();
+    let r = this.num1 - this.num2;
+    this.resposta = r.toFixed(2).toString();
+  }
+
+  multiplicar(): void{
+    let r = this.num1 * this.num2;
+    this.resposta = r.toFixed(2).toString();
+  }
+
+  dividir(): void{
+    this.resposta = 'Não é possível dividir por zero.';
+
+    if(this.num2 != 0){
+      let r = this.num1 / this.num2;
+      this.resposta = r.toFixed(2).toString();
+    }
   }
 }

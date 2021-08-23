@@ -7,7 +7,6 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
   <div id="container">
     <ion-item>
       <ion-label position="floating">
@@ -22,25 +21,29 @@
       </ion-label>
       <ion-input type="number" [(ngModel)] = "num2"></ion-input>
     </ion-item>
-    <div>
-      <ion-input value="{{resposta}}" readonly></ion-input>
-    </div>
+
+    <ion-item lines="none">
+      <p>{{resposta}}</p>
+    </ion-item>
 
     <div>
       <ion-button color="warning" expand="block"  (click)="somar()">
         Somar
       </ion-button>
     </div>
+
     <div>
       <ion-button color="danger" expand="block" (click)="subtrair()">
         Subtrair
       </ion-button>
     </div>
+
     <div>
       <ion-button color="dark" expand="block" (click)="multiplicar()">
         Multiplicar
       </ion-button>
     </div>
+
     <div>
       <ion-button color="success" expand="block" (click)="dividir()">
         Dividir
